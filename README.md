@@ -1,3 +1,3 @@
-# project-2
+# Doomsday web store
 
-this is an example
+
