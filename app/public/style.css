@@ -5,8 +5,8 @@ body{
 
 #logIn-div{
    background-image: url(https://i.ytimg.com/vi/KjMg4UQNnDI/maxresdefault.jpg);
-   width: 850px;
-   height: 650px;
+   width: 70%;
+   height: 90%;
    margin: auto;
    margin-top: 100px;
    border: 1px solid;
@@ -16,9 +16,10 @@ body{
 }
 
 #login-btn{
-    margin-left: 355px;
+    /* margin-left: 355px; */
     background-color: #ffd740;
     color: black;
+    margin-left: 50%;
 }
 
 #exampleInputEmail1{
@@ -54,4 +55,59 @@ h2{
     font-family: 'Nanum Brush Script', cursive;
     color: #ffd740;
     font-size: 90px
+}
+
+.nav-wrapper{
+    background-color: #212121;
+    
+   
+}
+
+
+
+.list-group{
+    width: 55%;
+    margin-top: 10%;
+    margin-left: 5%;
+    
+}
+
+#carouselExampleInterval{
+    /* background-color: #ffd740; */
+    width: 50%;
+    margin: auto;
+    /* margin-bottom: 5%; */
+    
+}
+
+#homePage-head{
+    text-align: center;
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ffd740;
+}
+
+#popItems-txt{
+    text-align: center;
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ffd740;
+    /* margin-top: 20%; */
+}
+
+#quote{
+    font-size: 250%;
+    width: 15%;
+    height: 90%;
+    margin-left: 10%;
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ffd740;
+}
+
+#description-div{
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ffd740;
+    
+}
+
+.lead{
+    font-size: 25px;
 }
