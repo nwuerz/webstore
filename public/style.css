@@ -15,7 +15,7 @@ body{
 
 }
 
-#login-btn{
+.start-btn{
     /* margin-left: 355px; */
     background-color: #ffd740;
     color: black;
