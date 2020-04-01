@@ -116,3 +116,39 @@ h2{
     color: #ffd740;
     margin-left: 50%;
 }
+
+#toilet-description-head{
+    text-align: center;
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ffd740;
+}
+
+#toilet-description-paragraph{
+    text-align: center;
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ffd740;
+    font-size: xx-large;
+}
+
+.rowOneDiv{
+    margin: auto;
+    /* background-color: red; */
+}
+
+.item-Txt{
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ffd740;
+}
+
+
+#deodorant-btn{
+    font-family: 'Nanum Brush Script', cursive;
+    background-color: #ffd740;
+    color: black;
+}
+
+.rowTwoDiv{
+    margin: auto;
+    margin-top: 10%;
+    /* background-color: blue; */
+}
