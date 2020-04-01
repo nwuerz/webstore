@@ -111,3 +111,8 @@ h2{
 .lead{
     font-size: 25px;
 }
+
+#loginTag{
+    color: #ffd740;
+    margin-left: 50%;
+}
