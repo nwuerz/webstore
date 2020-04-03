@@ -138,10 +138,11 @@ h2{
 .item-Txt{
     font-family: 'Nanum Brush Script', cursive;
     color: #ffd740;
+    text-align: center;
 }
 
 
-#deodorant-btn{
+.btn-decorcation{
     font-family: 'Nanum Brush Script', cursive;
     background-color: #ffd740;
     color: black;
@@ -149,6 +150,20 @@ h2{
 
 .rowTwoDiv{
     margin: auto;
-    margin-top: 10%;
+    margin-top: 2%;
     /* background-color: blue; */
+}
+
+.card-body{
+    background-image: url(https://i.pinimg.com/originals/ea/3f/d3/ea3fd3102ccf575e3c33954f73eab78d.jpg);
+}
+
+.card-text{
+    font-family: 'Nanum Brush Script', cursive;
+    color: #ffd740;
+    font-size: large;
+}
+
+.card{
+    border-color: black;
 }
