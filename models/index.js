@@ -1,11 +1,11 @@
 "use strict";
 
-var fs = require('fs');
-var path = require('path');
-var Sequelize = require('sequelize');
+var fs = require("fs");
+var path = require("path");
+var Sequelize = require("sequelize");
 var basename = path.basename(module.filename);
-var env = process.env.NODE_ENV || 'development';
-var config = require(__dirname + '/../config/config.json')[env];
+var env = process.env.NODE_ENV || "development";
+var config = require(__dirname + "/../config/config.json")[env];
 var db = {};
 
 if (config.use_env_variable) {
@@ -26,7 +26,7 @@ fs.readdirSync(__dirname)
     );
   })
   .forEach(function(file) {
-    var model = sequelize['import'](path.join(__dirname, file));
+    var model = sequelize.import(path.join(__dirname, file));
     db[model.name] = model;
   });
 
@@ -35,6 +35,9 @@ Object.keys(db).forEach(function(modelName) {
     db[modelName].associate(db);
   }
 });
+
+//Connect images
+db.images = require("./img.model.js")(sequelize, Sequelize);
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
