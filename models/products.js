@@ -1,9 +1,10 @@
 module.exports = function(db, Sequelize) {
   // Create Product Table
-  var Product = db.define("product", {
-    productId: Sequelize.INTEGER,
+  var Product = db.define("Product", {
     productName: Sequelize.STRING,
-    categoryId: Sequelize.INTEGER
+    price: Sequelize.DECIMAL,
+    description: Sequelize.STRING,
+    category: Sequelize.STRING
   });
   return Product;
 };
