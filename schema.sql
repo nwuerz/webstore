@@ -1,5 +1,5 @@
 -- Drops Database if Exists
-DROP DATABASE IF EXISTS zombie_db;
+DROP DATABASE IF EXISTS doomsdaydb;
 
 -- Create New Database
-CREATE DATABASE zombie_db;
+CREATE DATABASE doomsdaydb;
