@@ -36,6 +36,9 @@ Object.keys(db).forEach(function(modelName) {
   }
 });
 
+//Connect images
+db.images = require('../models/img.model.js')(sequelize, Sequelize);
+
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
