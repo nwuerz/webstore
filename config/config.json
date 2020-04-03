@@ -2,7 +2,7 @@
     "development": {
       "username": "root",
       "password": "root",
-      "database": "passport_demo",
+      "database": "doomsdayDB",
       "host": "localhost",
       "dialect": "mysql"
     },
@@ -14,10 +14,7 @@
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": "root",
-      "database": "database_production",
-      "host": "localhost",
+      "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql"
     }
   }
