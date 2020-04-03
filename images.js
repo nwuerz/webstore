@@ -1,6 +1,6 @@
 var fs = require("fs");
 
-var db = require("./index.js");
+var db = require("./models/index");
 
 db.sequelize.sync({ force: true }).then(function() {
   var imageData = fs.readFileSync(__dirname + "./public/assets");
