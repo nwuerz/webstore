@@ -16,22 +16,30 @@
     
     <div id="logIn-div">
         <h2>Sign up</h2>
-     <form id="login-form">
+     <form class="signup">
         <div class="form-group">
           <label id="emailTxt" for="exampleInputEmail1">Email address:</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp">
         
         </div>
         <div class="form-group">
           <label id="passwordTxt" for="exampleInputPassword1">Password:</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <input type="password" class="form-control" id="password-input">
         </div>
         <a class="waves-effect waves-light btn pulse" id="login-btn" href="login.html">Sign Up</a>
+        <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          <span class="sr-only">Error:</span> <span class="msg"></span>
+        </div>
+        <button type="submit" class="waves-effect waves-light btn pulse btn-default start-btn" id="signup-btn">Sign Up</button>
       </form>
       <br />
-        <p id="loginTag">Or log in <a href="/login">here</a></p>
+        <p id="loginTag">Or log in <a href="/login.html">here</a></p>
     </div>
   </div>
  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+
 </body>
 </html>
