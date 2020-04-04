@@ -152,6 +152,7 @@ h2{
     margin: auto;
     margin-top: 2%;
     /* background-color: blue; */
+    
 }
 
 .card-body{
@@ -166,4 +167,9 @@ h2{
 
 .card{
     border-color: black;
+    
+}
+
+.card-img-top{
+    height: 200px;
 }
