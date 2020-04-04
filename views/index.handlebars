@@ -1,0 +1,69 @@
+<!-- navbar -->
+<nav>
+    <div class="nav-wrapper">
+        <a href="/public/assets/cart.png" class="brand-logo"><i class="large material-icons">shopping_cart</i>Cart</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            {{#each categories}}
+            <li>this</li>
+            {{/each}}
+        </ul>
+    </div>
+</nav>
+
+<h1 id="homePage-head">Doomsday Store Home Page</h1>
+<!--  -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="list-group">
+            {{#each categories}}
+            <a class="list-group-item list-group-item-action" href="/category/{{this}}">{{this}}</a>
+            {{/each}}
+        </div>
+
+    </div>
+
+    <div class="col-md-4" id="description-div">
+        <!-- <div class="jumbotron jumbotron-fluid">
+    <div class="container"> -->
+        <h1 class="display-4">The webstore that keeps you <del>dead</del> alive <i
+                class="material-icons">sentiment_very_satisfied clear directions_run</i></h1>
+        <p class="lead">SURVIVE, SURVIVE, SURVIVE!! Browse through prdocuts that will be sure to
+            help you through these hard times. Checkout popular items to ensure you stay trendy! </p>
+        <!-- </div>
+  </div> -->
+    </div>
+
+    <div col-md-4 id="quote">
+        "Forget the future,
+        Forget the past.
+        Life is over:
+        Breathe your last.”
+        -Abarat (Clive Barker)
+    </div>
+    <!-- end row -->
+</div>
+<!--  -->
+<h1 id="popItems-txt">Popular Items</h1>
+<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-interval="10000">
+            <img src="/app/public/assets/cart.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-interval="2000">
+            <img src="..." class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="..." class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+</div>
