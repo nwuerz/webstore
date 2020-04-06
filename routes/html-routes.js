@@ -37,7 +37,8 @@ module.exports = function(app) {
         };
       });
       res.render("category", {
-        products: productsWithImages
+        products: productsWithImages,
+        category: req.params.name
       });
     });
   });

@@ -18,6 +18,13 @@ nav{
     background-image: url(https://i.ytimg.com/vi/KjMg4UQNnDI/maxresdefault.jpg);
 }
 
+#price{
+    color: red;
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Nanum Brush Script', cursive;
+}
+
 .list-group {
     font-family: 'Nanum Brush Script', cursive;
     font-size: xx-large;

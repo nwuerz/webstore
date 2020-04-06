@@ -5,7 +5,7 @@
     </a>
 </nav>
 
-<h1 id="toilet-description-head">Food</h1>
+<h1 id="toilet-description-head">{{category}}</h1>
 
 <p id="toilet-description-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi neque, facilis
    tempore quasi.</p>
@@ -17,8 +17,8 @@
       <div class="card" style="width: 18rem;">
          <img src="/assets/{{imagePath}}.jpg" class="card-img-top" alt="...">
          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-               content.</p>
+            <p class="card-text">{{dataValues.description}}</p>
+            <p id="price">${{dataValues.price}}</p>
             <button type="button" class="btn btn-primary btn-decorcation" id="beefJerky-btn">
                <i class="material-icons left">shopping_cart</i>add to cart
             </button>
