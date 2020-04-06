@@ -3,6 +3,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated.js");
 var db = require("../models");
 
 module.exports = function(app) {
+  //home page route
   app.get("/", function(req, res) {
     db.Product.findAll().then(function(products) {
       // console.log(products);
@@ -36,9 +37,15 @@ module.exports = function(app) {
         };
       });
       res.render("category", {
-        products: productsWithImages
+        products: productsWithImages,
+        category: req.params.name
       });
     });
+  });
+
+  // shopping cart route
+  app.get("/cart", (req, res) => {
+    res.render("cart");
   });
   // app.get("/login", function(req, res) {
   //   // If the user already has an account send them to the members page
