@@ -12,7 +12,17 @@ body{
    border: 1px solid;
    padding: 10px;
    box-shadow: 5px 10px #212121 ;
+}
 
+nav{
+    background-image: url(https://i.ytimg.com/vi/KjMg4UQNnDI/maxresdefault.jpg);
+}
+
+.list-group {
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: xx-large;
+    font-weight: bold;
+    text-align: center;
 }
 
 .start-btn{

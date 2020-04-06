@@ -3,6 +3,7 @@ var isAuthenticated = require("../config/middleware/isAuthenticated.js");
 var db = require("../models");
 
 module.exports = function(app) {
+  //home page route
   app.get("/", function(req, res) {
     db.Product.findAll().then(function(products) {
       // console.log(products);
@@ -39,6 +40,11 @@ module.exports = function(app) {
         products: productsWithImages
       });
     });
+  });
+
+  // shopping cart route
+  app.get("/cart", (req, res) => {
+    res.render("cart");
   });
   // app.get("/login", function(req, res) {
   //   // If the user already has an account send them to the members page
