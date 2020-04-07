@@ -45,7 +45,10 @@ module.exports = function(app) {
 
   // shopping cart route
   app.get("/cart", (req, res) => {
-    res.render("cart");
+    db.cart_table.findAll({})
+    .then(function(results) {
+        res.render("cart", {results});
+      })
   });
   // app.get("/login", function(req, res) {
   //   // If the user already has an account send them to the members page
