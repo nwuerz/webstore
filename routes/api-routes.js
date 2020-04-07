@@ -5,16 +5,14 @@ var db = require("../models");
 module.exports = function(app) {
   //GET route for all items in cart
   app.get("/api/cart", function(req, res) {
-    var query = {};
-    if (req.query.id) {
-      query.id = req.query.id;
-    }
-    db.Post.findAll({
-      where: query,
-      include: [db.Product]
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
+    /* this says give me all the stuff in the cart_table, and put it in the (results)
+    param, then do a res.json with the results passed inside it.. this res.json will allow 
+    us to pull the (results) on the front end when we use the /api/cart key */
+    cart_table.findAll(
+      {}.then(function(results) {
+        res.json(results);
+      })
+    );
   });
 
   //GET route for single cart item
