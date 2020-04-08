@@ -3,8 +3,26 @@ var isAuthenticated = require("../config/middleware/isAuthenticated.js");
 var db = require("../models");
 
 module.exports = function(app) {
-  //home page route
+  //start(signup) page route
   app.get("/", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/home");
+    }
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
+  //login page
+  app.get("/login", function(req, res) {
+    // If the user already has an account send them to the members page
+    if (req.user) {
+      res.redirect("/home");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
+  //home page
+  app.get("/home", isAuthenticated, function(req, res) {
     db.Product.findAll().then(function(products) {
       // console.log(products);
       const categories = [];
@@ -58,9 +76,9 @@ module.exports = function(app) {
 
   // // Here we've add our isAuthenticated middleware to this route.
   // // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/home", isAuthenticated, function(req, res) {
-    res.render("index", { products: products });
-  });
+  // app.get("/home", isAuthenticated, function(req, res) {
+  //   res.render("index", { products: products });
+  // });
   // // If user does not have an account send the to the signup page
   // app.get("/signup", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/index.html"));
