@@ -31,8 +31,8 @@ function showCart() {
     var row = $("<div>");
     row.addClass("item");
 
-    row.append("<p>" + cartData[i].productName + " chirped.. </p>");
-    row.append("<p>" + cartData[i].price + "</p>");
+    row.append("<p>" + cartData[i].productName + "</p>");
+    row.append("<p> $" + cartData[i].price + "</p>");
 
     $("#itemSection").prepend(row);
   }

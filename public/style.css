@@ -190,3 +190,10 @@ h2{
 .card-img-top{
     height: 200px;
 }
+
+#cartCard{
+    background-color: black;
+    color: #ffd740;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: large;
+}
