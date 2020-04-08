@@ -312,15 +312,6 @@ module.exports = {
           updatedAt: new Date()
         },
         {
-          productName: "Cross Bow",
-          price: 99.99,
-          description:
-            "Some quick example text to build on the card title and make up the bulk of the card's content.",
-          category: "misc",
-          createdAt: new Date(),
-          updatedAt: new Date()
-        },
-        {
           productName: "Radio",
           price: 89.99,
           description:

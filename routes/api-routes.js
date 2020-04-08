@@ -55,11 +55,23 @@ module.exports = function(app) {
   });
 
   //PRODUCTS ROUTES
-
-  app.get("/api/products", function(req, res) {
-    db.Product.findAll({}).then(function(results) {
-      res.json(results);
-    });
+  // db.Product.findAll({}).then(function(results) {
+  //   res.json(results);
+  // });
+  app.get("/api/products:item?", function(req, res) {
+    if (req.params.item) {
+      Product.findOne({
+        where: {
+          productName: req.params.item
+        }
+      }).then(function(result) {
+        return res.json(result);
+      });
+    } else {
+      Product.findAll({}).then(function(results) {
+        return res.json(results);
+      });
+    }
   });
 
   //PUT route for updating cart
