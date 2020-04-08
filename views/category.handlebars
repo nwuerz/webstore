@@ -12,14 +12,14 @@
 
 <div class="row" id="first-toilet-row">
    {{#each products}}
-   <div id="col-md-3" class="rowOneDiv">
-      <h3 class="item-Txt">{{dataValues.productName}}</h3>
+   <div id="col-md-3" class="rowOneDiv product">
+      <h3 class="item-txt">{{dataValues.productName}}</h3>
       <div class="card" style="width: 18rem;">
          <img src="/assets/{{imagePath}}.jpg" class="card-img-top" alt="...">
          <div class="card-body">
             <p class="card-text">{{dataValues.description}}</p>
             <p id="price">${{dataValues.price}}</p>
-            <button type="button" class="btn btn-primary btn-decorcation" id="beefJerky-btn">
+            <button type="button" class="btn btn-primary btn-decorcation btn-item" id="beefJerky-btn">
                <i class="material-icons left">shopping_cart</i>add to cart
             </button>
          </div>
