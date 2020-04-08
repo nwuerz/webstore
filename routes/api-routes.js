@@ -5,67 +5,61 @@ var db = require("../models");
 module.exports = function(app) {
   //GET route for all items in cart
   app.get("/api/cart", function(req, res) {
-    /* this says give me all the stuff in the cart_table, and put it in the (results)
-    param, then do a res.json with the results passed inside it.. this res.json will allow 
-    us to pull the (results) on the front end when we use the /api/cart key */
-    db.cart_table.findAll({})
-    .then(function(results) {
-        res.json(results);
-      })
-    
-  });
-
-  
-  //GET route for single cart item
-  app.get("/api/cart/:id", function(req, res) {
-    db.cart_table.findOne({
-      where: {
-        id: req.params.id
-      }//,
-      // include: [db.Product]
-    }).then(function(dbPost) {
-      res.json(dbPost);
+    db.cart_table.findAll({}).then(function(results) {
+      res.json(results);
     });
   });
-  
+
+  //GET route for single cart item
+  app.get("/api/cart/:id", function(req, res) {
+    db.cart_table
+      .findOne({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+
   //POST route for saving new cart item
   app.post("/api/cart", function(req, res) {
-    
     db.cart_table.create(req.body).then(function(dbPost) {
       res.json(dbPost);
     });
   });
-  
+
   //POST route for saving new cart item
   app.post("/api/cart/:id", function(req, res) {
-    
-    db.Product.findOne({id: req.params.id})
-    .then(function(results) {
-      return db.cart_table.create(results[0])
-    })
-    .then(function(dbPost) {
-      res.json(dbPost);
-    });
+    db.Product.findOne({ id: req.params.id })
+      .then(function(results) {
+        return db.cart_table.create(results[0]);
+      })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
   });
 
   //DELETE route for deleteting items
   app.delete("/api/cart/:id", function(req, res) {
-    db.cart_table.destroy({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbPost) {
-      res.json(dbPost);
-    });
+    db.cart_table
+      .destroy({
+        where: {
+          id: req.params.id
+        }
+      })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
   });
 
   //PRODUCTS ROUTES
-  
+
   app.get("/api/products", function(req, res) {
-    db.Product.findAll({})
-    .then(function(results) {
-        res.json(results);
-      })
+    db.Product.findAll({}).then(function(results) {
+      res.json(results);
+    });
   });
 
   //PUT route for updating cart
@@ -111,7 +105,6 @@ module.exports = function(app) {
 //     location.assign("/cart");
 //   });
 // });
-
 
 // module.exports = function(app) {
 //   // Using the passport.authenticate middleware with our local strategy.
