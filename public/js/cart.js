@@ -1,6 +1,4 @@
-var db = require("../");
-var nodemailer = require("nodemailer");
-console.log("this is user " + db.User.email);
+// console.log("this is user " + db.User.email);
 let cartData = localStorage.getItem("cartData")
   ? JSON.parse(localStorage.getItem("cartData"))
   : [];
@@ -36,8 +34,8 @@ function showCart() {
     var row = $("<div>");
     row.addClass("item");
 
-    row.append("<p>" + cartData[i].productName + "</p>");
-    row.append("<p> $" + cartData[i].price + "</p>");
+    row.append("<h1>" + cartData[i].productName + "</h1>");
+    row.append("<h3> $" + cartData[i].price + "</h3>");
 
     $("#itemSection").prepend(row);
 
@@ -49,29 +47,53 @@ function showCart() {
   //this is how we get our total
   let totalPrice = sumPriceArray.reduce((a, b) => a + b);
   console.log("this is the price " + totalPrice);
+
+  var totalRow = $("<div>");
+  totalRow.addClass("totalPrice");
+  totalRow.append("<h1>" + "Total Price" + "</h1>");
+  totalRow.append("<h3>" + "$ " + totalPrice + "</h3>");
+  $("#priceSection").prepend(totalRow);
+
+  $("#priceBtn").on("click", function() {
+    // alert("Thank you for shopping with us. Your total is " + "$" + totalPrice);
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton: "btn btn-success",
+        cancelButton: "btn btn-danger"
+      },
+      buttonsStyling: false
+    });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "Your life depends on it!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, Buy it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+      })
+      .then(result => {
+        if (result.value) {
+          swalWithBootstrapButtons.fire(
+            "Purchased",
+            "Your total is $" + totalPrice,
+            "success"
+          );
+        } else if (
+          /* Read more about handling dismissals below */
+          result.dismiss === Swal.DismissReason.cancel
+        ) {
+          swalWithBootstrapButtons.fire("Cancelled", "Keep shopping!", "error");
+        }
+      });
+    //clear goes here
+  });
 }
 
 showCart();
 
-var transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "doomsdaywebstore@gmail.com",
-    pass: "PA$$word22"
-  }
-});
-
-var mailOptions = {
-  from: "doomsdaywebstore@gmail.com",
-  to: db.User.email,
-  subject: "Sending Email using Node.js",
-  text: "That was easy!"
-};
-
-transporter.sendMail(mailOptions, function(error, info) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Email sent: " + info.response);
-  }
-});
+// $("#priceBtn").on("click", function() {
+//   alert("Thank you for shopping with us. Your total is " + totalPrice);
+// });
