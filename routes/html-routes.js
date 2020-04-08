@@ -1,4 +1,4 @@
-// var path = require("path");
+var path = require("path");
 var isAuthenticated = require("../config/middleware/isAuthenticated.js");
 var db = require("../models");
 
@@ -45,10 +45,9 @@ module.exports = function(app) {
 
   // shopping cart route
   app.get("/cart", (req, res) => {
-    db.cart_table.findAll({}).then(function(results) {
-      res.render("cart", { results });
-    });
+    res.sendFile(path.join(__dirname, "../public/cart.html"));
   });
+
   // app.get("/login", function(req, res) {
   //   // If the user already has an account send them to the members page
   //   if (req.user) {

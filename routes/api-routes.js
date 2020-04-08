@@ -58,9 +58,9 @@ module.exports = function(app) {
   // db.Product.findAll({}).then(function(results) {
   //   res.json(results);
   // });
-  app.get("/api/products:item?", function(req, res) {
+  app.get("/api/products/:item", function(req, res) {
     if (req.params.item) {
-      Product.findOne({
+      db.Product.findOne({
         where: {
           productName: req.params.item
         }
@@ -68,7 +68,7 @@ module.exports = function(app) {
         return res.json(result);
       });
     } else {
-      Product.findAll({}).then(function(results) {
+      db.Product.findAll({}).then(function(results) {
         return res.json(results);
       });
     }
