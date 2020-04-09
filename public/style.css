@@ -216,3 +216,7 @@ h2{
     background-color: #ffd740;
     color: black;
 }
+
+.selector-for-some-widget {
+    box-sizing: content-box;
+  }
