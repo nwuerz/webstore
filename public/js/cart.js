@@ -109,3 +109,13 @@ function showCart() {
 }
 
 showCart();
+
+$(".btn-item").on("click", function() {
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: "added to cart",
+    showConfirmButton: false,
+    timer: 1500
+  });
+});
