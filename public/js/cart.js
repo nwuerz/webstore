@@ -89,11 +89,23 @@ function showCart() {
         }
       });
     //clear goes here
+
+    // $(".clearBtn").on("click", function() {
+    //   (cartData.total = 0), (cartData.rows = []);
+    // });
+
+    // $(".clearBtn").on("click", function() {
+    //   clearCart();
+    // });
+
+    // $(".priceBtn").on("click", function() {
+    //   localStorage.clear();
+    // });
+
+    // $(".btn btn-success").on("click", function() {
+    //   localStorage.removeItem("cartData");
+    // });
   });
 }
 
 showCart();
-
-// $("#priceBtn").on("click", function() {
-//   alert("Thank you for shopping with us. Your total is " + totalPrice);
-// });
