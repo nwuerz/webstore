@@ -1,5 +1,8 @@
 <!-- nav bar -->
   <nav>
+     {{#each categories}}
+     <a href="/category/{{name}}">{{name}}</a>
+     {{/each}}
     <a style="background-color: #ffd740" class="btn-floating btn-large waves-effect waves-light right pulse z-depth-5" href="/cart">
         <i class="tiny material-icons black-text">shopping_cart</i>
     </a>

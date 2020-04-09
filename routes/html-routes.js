@@ -39,13 +39,14 @@ module.exports = function(app) {
   });
 
   // category route
-  app.get("/category/:name", function(req, res) {
-    const categoryName = req.params.name;
-    db.Product.findAll({
-      where: {
-        category: categoryName
-      }
-    }).then(function(products) {
+  app.get("/category/:name", async function(req, res) {
+    try {
+      const categoryName = req.params.name;
+      const products = await db.Product.findAll({
+        where: {
+          category: categoryName
+        }
+      });
       const productsWithImages = products.map(product => {
         return {
           ...product,
@@ -54,11 +55,35 @@ module.exports = function(app) {
             .toLowerCase()
         };
       });
+
+      const allProducts = await db.Product.findAll();
+      const categoriesUnique = [];
+      allProducts.forEach(product => {
+        if (categoriesUnique.indexOf(product.dataValues.category) === -1) {
+          categoriesUnique.push(product.dataValues.category);
+        }
+      });
+      const categories = categoriesUnique.map(category => ({ name: category }));
+      // const newCategories = new Set();
+      // allProducts.forEach(({ dataValues: { category } }) => {
+      //   console.log(category);
+      //   newCategories.add(category);
+      //   console.log(newCategories);
+      // });
+      // console.log(newCategories);
+      // const categories = Array.from(newCategories, category => ({
+      //   name: category
+      // }));
+      console.log(categories);
+
       res.render("category", {
         products: productsWithImages,
-        category: req.params.name
+        category: req.params.name,
+        categories
       });
-    });
+    } catch (err) {
+      console.log("ERR", err);
+    }
   });
 
   // shopping cart route
