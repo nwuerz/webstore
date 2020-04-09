@@ -184,7 +184,6 @@ h2{
 
 .card{
     border-color: black;
-    
 }
 
 .card-img-top{
@@ -196,4 +195,14 @@ h2{
     color: #ffd740;
     font-family: 'Nanum Brush Script', cursive;
     font-size: large;
+}
+
+#categories{
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: xx-large;
+}
+
+.fixed-action-btn{
+    position: fixed;
+    top: 0%;
 }

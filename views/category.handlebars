@@ -1,17 +1,37 @@
 <!-- nav bar -->
   <nav>
-     {{#each categories}}
-     <a href="/category/{{name}}">{{name}}</a>
-     {{/each}}
-    <a style="background-color: #ffd740" class="btn-floating btn-large waves-effect waves-light right pulse z-depth-5" href="/cart">
-        <i class="tiny material-icons black-text">shopping_cart</i>
-    </a>
+
+     <div class="fixed-action-btn toolbar">
+      <a style="background-color: #ffd740" class="btn-floating btn-large">
+         <i style="background-color: #ffd740" class="tiny material-icons black-text">menu</i>
+      </a>
+      <ul>
+
+         {{#each categories}}
+         <li>
+            <a id="categories" href="/category/{{name}}" style="background-color: #ffd740" class="black-text">{{name}}</a>
+         </li>
+         {{/each}}
+
+         <li>
+            <a style="background-color: #ffd740" class="btn-floating btn-large waves-effect waves-light right pulse z-depth-5" href="/home">
+               <i class="tiny material-icons black-text">home</i>
+            </a>
+         </li>
+
+         <li>
+            <a style="background-color: #ffd740" class="btn-floating btn-large waves-effect waves-light right pulse z-depth-5" href="/cart">
+               <i style="background-color: #ffd740" class="tiny material-icons black-text">shopping_cart</i>
+            </a>
+         </li>
+
+      </ul>
+
+      </div>
+
   </nav>
 
 <h1 id="toilet-description-head">{{category}}</h1>
-
-<p id="toilet-description-paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi neque, facilis
-   tempore quasi.</p>
 
 <div class="row" id="first-toilet-row">
    {{#each products}}
@@ -31,5 +51,5 @@
    {{/each}}
 </div>
 
-<script src="/public/js/category.js"></script>
+<script src="/js/category.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
